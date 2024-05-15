@@ -6,7 +6,6 @@ import Simulacion from "../../interfaces/simulacion.interface";
 @Component({
   selector: 'app-simulaciones',
   templateUrl: './simulaciones.html',
-  styleUrls: ['./simulaciones.component.css']
 })
 export class SimulacionesComponent implements OnInit {
   simulaciones: Simulacion[] = [];

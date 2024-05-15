@@ -4,7 +4,6 @@ import {LoginService} from "../../servicios/login.service";
 @Component({
   selector: 'app-login',
   templateUrl: './login.html',
-  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   email: string = '';
