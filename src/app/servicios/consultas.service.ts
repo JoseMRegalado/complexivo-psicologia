@@ -14,7 +14,7 @@ export class ConsultasService {
   obtenerSimulaciones(): Observable<Simulacion[]> {
     try {
       const simulacionesRef = this.firestore.collection<Simulacion>
-      ("simulaciones", ref => ref);
+      ("simulacion", ref => ref);
       return simulacionesRef.get().pipe(
         map((querySnapshot: QuerySnapshot<Simulacion>) => {
           return querySnapshot.docs.map(doc => doc.data());

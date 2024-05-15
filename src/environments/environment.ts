@@ -1,4 +1,5 @@
 export const environment = {
+  production: false,
   firebase: {
     apiKey: "AIzaSyCoaQMH1SL_jtlcUzi50LvLTW1cJgp8bvI",
     authDomain: "complexivopsicologia.firebaseapp.com",

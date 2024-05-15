@@ -13,7 +13,7 @@ import {SimulacionesComponent} from "./componentes/simulaciones/simulaciones";
 import {LoginComponent} from "./componentes/login/login";
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Redirecciona al componente de inicio de sesión por defecto
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'simulaciones', component: SimulacionesComponent }
 ];

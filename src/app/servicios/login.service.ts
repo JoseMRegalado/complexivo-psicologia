@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { Router } from '@angular/router'; // Importa el Router
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +11,6 @@ export class LoginService {
   private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {
-    // Comprobar el estado de autenticación actual al inicializar el servicio
     // @ts-ignore
     this.afAuth.authState.subscribe((user: firebase.User | null) => {
       this.loggedIn.next(!!user);
@@ -24,32 +23,30 @@ export class LoginService {
       this.afAuth.signInWithEmailAndPassword(email, password)
         .then(() => {
           this.loggedIn.next(true);
-          observer.next(); // Envía una notificación de éxito al completar la autenticación
+          observer.next();
           observer.complete();
-          this.router.navigate(['/simulaciones']); // Redirige al usuario a la página de simulaciones
+          this.router.navigate(['/simulaciones']);
         })
         .catch(error => {
-          observer.error(error); // Envía un mensaje de error si la autenticación falla
+          observer.error(error);
         });
     });
   }
 
-  // Método para cerrar sesión
   logout(): Observable<any> {
     return new Observable((observer) => {
       this.afAuth.signOut()
         .then(() => {
           this.loggedIn.next(false);
-          observer.next(); // Envía una notificación de éxito al cerrar sesión
+          observer.next();
           observer.complete();
         })
         .catch(error => {
-          observer.error(error); // Envía un mensaje de error si cerrar sesión falla
+          observer.error(error);
         });
     });
   }
 
-  // Método para verificar si el usuario está autenticado
   isLoggedIn(): Observable<boolean> {
     return this.loggedIn.asObservable();
   }

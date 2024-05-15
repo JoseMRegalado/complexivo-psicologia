@@ -20,6 +20,7 @@ export class SimulacionesComponent implements OnInit {
     this.consultasService.obtenerSimulaciones().subscribe(
       simulaciones => {
         this.simulaciones = simulaciones;
+        console.log(this.simulaciones);
       },
       error => {
         console.error('Error al obtener las simulaciones: ', error);

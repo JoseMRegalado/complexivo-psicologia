@@ -16,11 +16,9 @@ export class LoginComponent {
     this.loginService.login(this.email, this.password)
       .subscribe(
         () => {
-          // Éxito: redirigir a la página de simulaciones
           this.error = '';
         },
         error => {
-          // Error: mostrar mensaje de error
           this.error = error.message;
         }
       );
