@@ -11,15 +11,18 @@ import {getStorage, provideStorage} from "@angular/fire/storage";
 import {environment} from "../environments/environment";
 import {SimulacionesComponent} from "./componentes/simulaciones/simulaciones";
 import {LoginComponent} from "./componentes/login/login";
+import {Paso1Component} from "./componentes/pasos/paso1/paso1";
+import {AppRoutingModule} from "./app-routing.module";
+import {ConsultasService} from "./servicios/consultas.service";
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'simulaciones', component: SimulacionesComponent }
+  { path: 'simulaciones', component: SimulacionesComponent },
+  { path: 'paso1', component: Paso1Component}
 ];
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, SimulacionesComponent
+    AppComponent, LoginComponent, SimulacionesComponent, Paso1Component
   ],
 
   imports: [
@@ -30,9 +33,10 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
-    provideStorage(() => getStorage())
+    provideStorage(() => getStorage()),
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [ConsultasService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,16 @@
+<div class="video-container">
+  <iframe src="https://utpl-my.sharepoint.com/personal/mjregalado2_utpl_edu_ec/_layouts/15/embed.aspx?UniqueId=7fc0e6f1-f19b-4df1-a683-ad5c153f2317&embed=%7B%22ust%22%3Atrue%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create"
+          width="640" height="360" frameborder="0" scrolling="no" allowfullscreen
+          title="pythonProject – main.py 2023-01-23 21-50-48.mp4">
+  </iframe>
+</div>
+
+<div *ngIf="simulaciones">
+  <h2>{{ simulaciones.nombre }}</h2>
+  <span>{{ simulaciones.descripcion }}</span>
+</div>
+
+<div *ngIf="simulaciones">
+  <button *ngIf="simulaciones.archivo" (click)="descargarArchivo(simulaciones.archivo)">Descargar Documento</button>
+  <span *ngIf="!simulaciones.archivo">No hay documento disponible para descargar.</span>
+</div>

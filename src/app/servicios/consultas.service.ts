@@ -28,4 +28,11 @@ export class ConsultasService {
       });
     }
   }
+
+  obtenerSimulacionPorId(id: string): Observable<Simulacion | undefined> {
+    const docRef = this.firestore.collection<Simulacion>("simulacion").doc(id);
+    return docRef.get().pipe(
+      map(doc => doc.exists ? doc.data() as Simulacion : undefined)
+    );
+  }
 }

@@ -1,11 +1,16 @@
 <div>
   <h2>Simulaciones</h2>
-  <ul>
-    <li *ngFor="let simulacion of simulaciones">
-      {{simulacion.id}}<br>
+  <div *ngFor="let simulacion of simulaciones">
+
       {{simulacion.nombre}}<br>
       {{simulacion.rating}} <br>
       {{simulacion.descripcion}}
-    </li>
-  </ul>
+    <br>
+    <button [routerLink]="['/paso1', simulacion.id]">Ir a la simulacion</button>
+    <br>
+    <br>
+
+  </div>
 </div>
+
+
