@@ -1,15 +1,22 @@
   <app-header></app-header>
-  <h2>Simulaciones</h2>
+<div class="container">
+  <div class="titulo">
+    <h2>Simulaciones</h2>
+    <p>The Nextcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.​</p>
+  </div>
+
   <section class="simulacion" *ngFor="let simulacion of simulaciones">
 
       <h5>{{simulacion.nombre}}<br></h5>
+    <p>{{simulacion.descripcion}}</p>
+    <div class="rating">
+      <img src="assets/img/estrella.svg">
       {{simulacion.rating}} <br>
-      {{simulacion.descripcion}}
-    <br>
+    </div>
+
     <button [routerLink]="['/paso1', simulacion.id]">Ir a la simulacion</button>
-    <br>
-    <br>
 
   </section>
-
+</div>
+  <app-footer></app-footer>
 
