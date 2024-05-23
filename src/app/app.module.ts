@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'simulaciones', component: SimulacionesComponent },
   { path: 'paso1', component: Paso1Component},
-  {path: 'home', component: HomeComponent}
+  {path: 'home', component: HomeComponent},
 ];
 @NgModule({
   declarations: [

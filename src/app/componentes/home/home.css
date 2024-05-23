@@ -28,6 +28,7 @@
 
 .btn:hover{
   background:var(--blue);
+  color: rgba(4, 65, 112, 1);
 }
 
 .img{

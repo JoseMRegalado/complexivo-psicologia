@@ -12,12 +12,12 @@
   </div>
 
   <nav class="navbar">
-    <a href="#Principal">Principal</a>
-    <a href="#Simulaciones">Simulaciones</a>
+    <a [routerLink]="['/home']">Principal</a>
+    <a [routerLink]="['/simulaciones']">Simulaciones</a>
     <a href="#UTPL">UTPL</a>
     <a href="#Psicologia">Psicologia</a>
   </nav>
 
-  <a href="#Iniciar Sesión" class="boton"><button>Iniciar Sesión</button></a>
+  <a [routerLink]="['/login']" class="boton"><button>Iniciar Sesión</button></a>
 
 </header>
