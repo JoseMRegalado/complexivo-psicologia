@@ -1,0 +1,26 @@
+.final {
+  background-color: rgb(38, 50, 56);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  padding: 2rem 9%;
+
+}
+
+.contacto{
+  width: 243.62px;
+  line-height: 20px;
+}
+
+.enlaces{
+  display: flex;
+  width: 243.62px;
+  font-size: 14px;
+}
+
+.enlaces h5{
+  line-height: 30px;
+  width: 243.62px;
+  font-weight: 100;
+}

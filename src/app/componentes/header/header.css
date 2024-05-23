@@ -1,0 +1,47 @@
+header{
+  top: 0;left: 0;right: 0;
+  background: #fff;
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1);
+  height: 58.76px;
+}
+
+header .logo{
+  display: flex;
+  align-items: center;
+
+}
+
+header .logo span{
+  color: var(--blue);
+}
+
+header .logo img{
+  height: 50px;
+  margin-right: 10px;
+}
+
+header .navbar a{
+  font-size: 15px;
+  padding: 0 1.5rem;
+  color: #667;
+}
+
+header .navbar a:hover{
+  color:var(--blue);
+}
+
+header .boton button{
+  color: #fff;
+  padding: 9px 25px;
+  background:rgba(4, 65, 112, 1);
+  border: none;
+  cursor: pointer;
+  font-size: 11.14px;
+  width: 132.25px;
+  height: 36.49px;
+}

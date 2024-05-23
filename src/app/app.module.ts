@@ -14,15 +14,20 @@ import {LoginComponent} from "./componentes/login/login";
 import {Paso1Component} from "./componentes/pasos/paso1/paso1";
 import {AppRoutingModule} from "./app-routing.module";
 import {ConsultasService} from "./servicios/consultas.service";
+import {HeaderComponent} from "./componentes/header/header";
+import {HomeComponent} from "./componentes/home/home";
+import {FooterComponent} from "./componentes/footer/footer";
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'simulaciones', component: SimulacionesComponent },
-  { path: 'paso1', component: Paso1Component}
+  { path: 'paso1', component: Paso1Component},
+  {path: 'home', component: HomeComponent}
 ];
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, SimulacionesComponent, Paso1Component
+    AppComponent, LoginComponent, SimulacionesComponent, Paso1Component, HeaderComponent, HomeComponent,
+    FooterComponent
   ],
 
   imports: [

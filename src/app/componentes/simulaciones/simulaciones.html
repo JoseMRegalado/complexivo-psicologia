@@ -1,8 +1,8 @@
-<div>
+  <app-header></app-header>
   <h2>Simulaciones</h2>
-  <div *ngFor="let simulacion of simulaciones">
+  <section class="simulacion" *ngFor="let simulacion of simulaciones">
 
-      {{simulacion.nombre}}<br>
+      <h5>{{simulacion.nombre}}<br></h5>
       {{simulacion.rating}} <br>
       {{simulacion.descripcion}}
     <br>
@@ -10,7 +10,6 @@
     <br>
     <br>
 
-  </div>
-</div>
+  </section>
 
 
