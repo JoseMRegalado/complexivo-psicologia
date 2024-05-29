@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ConsultasService} from "../../servicios/consultas.service";
-import Simulacion from "../../interfaces/simulacion.interface";
+import {ConsultasService} from "../../services/consultas.service";
+import Simulacion from "../../interfaces/simulation.interface";
 
 
 @Component({

@@ -1,4 +1,4 @@
-import {Opcion} from "./opcion.interface";
+import {Opcion} from "./option.interface";
 
 export default interface Pregunta {
   id: string;

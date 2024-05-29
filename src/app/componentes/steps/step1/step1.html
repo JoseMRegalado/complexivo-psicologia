@@ -1,7 +1,7 @@
 <app-header></app-header>
 <section class="video">
   <div class="video-container" *ngIf="simulaciones" >
-  <iframe src="https://youtu.be/PfxdVO-IRE8"
+  <iframe [src]="videoUrl"
           width="740" height="460" frameborder="0" scrolling="no" allowfullscreen
           title="pythonProject – main.py 2023-01-23 21-50-48.mp4">
   </iframe>
@@ -11,7 +11,7 @@
     <div class="titulo">
       <h2>{{ simulaciones.nombre }}</h2>
       <div class="descarga">
-        <img src="assets/img/Descargar.svg" alt="Boton descarga">
+        <img src="assets/img/Descargar.svg" alt="Boton descarga" >
         <div *ngIf="simulaciones">
           <button *ngIf="simulaciones.archivo" (click)="descargarArchivo(simulaciones.archivo)">Descargar Documento</button>
           <span *ngIf="!simulaciones.archivo">No hay documento disponible para descargar.</span>

@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import {ConsultasService} from "../../servicios/consultas.service";
-import Simulacion from "../../interfaces/simulacion.interface";
+import {ConsultasService} from "../../services/consultas.service";
+import Simulacion from "../../interfaces/simulation.interface";
 
 
 @Component({
-  selector: 'app-simulaciones',
-  templateUrl: './simulaciones.html',
-  styleUrls: ['./simulaciones.css']
+  selector: 'app-simulations',
+  templateUrl: './simulations.html',
+  styleUrls: ['./simulations.css']
 })
-export class SimulacionesComponent implements OnInit {
+export class SimulationsComponent implements OnInit {
   simulaciones: Simulacion[] = [];
 
   constructor(private consultasService: ConsultasService) { }
@@ -24,7 +24,7 @@ export class SimulacionesComponent implements OnInit {
         console.log(this.simulaciones);
       },
       error => {
-        console.error('Error al obtener las simulaciones: ', error);
+        console.error('Error al obtener las simulations: ', error);
       }
     );
   }

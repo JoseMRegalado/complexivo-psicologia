@@ -9,24 +9,24 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
 import {getStorage, provideStorage} from "@angular/fire/storage";
 import {environment} from "../environments/environment";
-import {SimulacionesComponent} from "./componentes/simulaciones/simulaciones";
+import {SimulationsComponent} from "./componentes/simulations/simulations";
 import {LoginComponent} from "./componentes/login/login";
-import {Paso1Component} from "./componentes/pasos/paso1/paso1";
+import {Step1Component} from "./componentes/steps/step1/step1";
 import {AppRoutingModule} from "./app-routing.module";
-import {ConsultasService} from "./servicios/consultas.service";
+import {ConsultasService} from "./services/consultas.service";
 import {HeaderComponent} from "./componentes/header/header";
 import {HomeComponent} from "./componentes/home/home";
 import {FooterComponent} from "./componentes/footer/footer";
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'simulaciones', component: SimulacionesComponent },
-  { path: 'paso1', component: Paso1Component},
+  { path: 'simulations', component: SimulationsComponent },
+  { path: 'step1', component: Step1Component},
   {path: 'home', component: HomeComponent},
 ];
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent, SimulacionesComponent, Paso1Component, HeaderComponent, HomeComponent,
+    AppComponent, LoginComponent, SimulationsComponent, Step1Component, HeaderComponent, HomeComponent,
     FooterComponent
   ],
 

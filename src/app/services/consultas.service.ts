@@ -3,7 +3,7 @@ import { AngularFirestore, DocumentReference } from "@angular/fire/compat/firest
 import firebase from "firebase/compat";
 import QuerySnapshot = firebase.firestore.QuerySnapshot;
 import {map, Observable} from "rxjs";
-import Simulacion from "../interfaces/simulacion.interface";
+import Simulacion from "../interfaces/simulation.interface";
 @Injectable({
   providedIn:"root"
 })
@@ -21,7 +21,7 @@ export class ConsultasService {
         })
       );
     } catch (error) {
-      console.error("Error al obtener las simulaciones: ", error);
+      console.error("Error al obtener las simulations: ", error);
       return new Observable<Simulacion[]>(observer => {
         observer.next([]);
         observer.complete();

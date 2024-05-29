@@ -1,29 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import {ConsultasService} from "../../../servicios/consultas.service";
-import Simulacion from "../../../interfaces/simulacion.interface";
+import {ConsultasService} from "../../../services/consultas.service";
+import Simulacion from "../../../interfaces/simulation.interface";
 import {ActivatedRoute} from "@angular/router";
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
 @Component({
-  selector: 'app-paso1',
-  templateUrl: './paso1.html',
-  styleUrls: ['./paso1.css']
+  selector: 'app-step1',
+  templateUrl: './step1.html',
+  styleUrls: ['./step1.css']
 })
-export class Paso1Component implements OnInit {
+export class Step1Component implements OnInit {
   simulaciones: Simulacion | undefined;
+  videoUrl: SafeResourceUrl | undefined;
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private consultasService: ConsultasService
+    private consultasService: ConsultasService,
+    private sanitizer: DomSanitizer
   ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap.subscribe(params => { // Cambia 'route' a 'activatedRoute'
+    this.activatedRoute.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id) {
         this.consultasService.obtenerSimulacionPorId(id).subscribe(
-          simulaciones => {
-            this.simulaciones = simulaciones;
+          simulacion => {
+            this.simulaciones = simulacion;
+            this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.simulaciones?.video || '');
             console.log(this.simulaciones);
           },
           error => {

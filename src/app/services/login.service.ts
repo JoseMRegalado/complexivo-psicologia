@@ -25,7 +25,7 @@ export class LoginService {
           this.loggedIn.next(true);
           observer.next();
           observer.complete();
-          this.router.navigate(['/simulaciones']);
+          this.router.navigate(['/simulations']);
         })
         .catch(error => {
           observer.error(error);

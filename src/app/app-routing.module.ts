@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SimulacionesComponent } from './componentes/simulaciones/simulaciones';
-import { Paso1Component } from './componentes/pasos/paso1/paso1';
+import { SimulationsComponent } from './componentes/simulations/simulations';
+import { Step1Component } from './componentes/steps/step1/step1';
 import {HomeComponent} from "./componentes/home/home";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'paso1/:id', component: Paso1Component }
+  { path: 'step1/:id', component: Step1Component }
 ];
 
 @NgModule({
