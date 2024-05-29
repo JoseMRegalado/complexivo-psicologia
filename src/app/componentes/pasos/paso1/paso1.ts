@@ -7,6 +7,7 @@ import {ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-paso1',
   templateUrl: './paso1.html',
+  styleUrls: ['./paso1.css']
 })
 export class Paso1Component implements OnInit {
   simulaciones: Simulacion | undefined;

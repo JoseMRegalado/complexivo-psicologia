@@ -1,0 +1,55 @@
+.video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.video-container inframe{
+  width: 300%;
+  height: 300%;
+}
+
+.titulo{
+  display: flex;
+
+}
+
+.titulo img{
+  width: 42px;
+  height: 34px;
+}
+
+.titulo button{
+  width: 53px;
+  height: 30px;
+  font-size: 10px;
+  box-shadow: none;
+
+}
+
+.descarga{
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.descripcion h2{
+  height: 64px;
+  font-size: 30px;
+
+}
+
+.descripcion span{
+  line-height: 24px;
+}
+
