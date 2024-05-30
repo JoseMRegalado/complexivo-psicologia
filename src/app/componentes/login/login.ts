@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {LoginService} from "../../services/login.service";
+import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service'; // Adjust the path as needed
 
 @Component({
   selector: 'app-login',
@@ -8,19 +9,17 @@ import {LoginService} from "../../services/login.service";
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  error: string = '';
 
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) { }
 
-  onSubmit() {
-    this.loginService.login(this.email, this.password)
-      .subscribe(
-        () => {
-          this.error = '';
-        },
-        error => {
-          this.error = error.message;
-        }
-      );
+  login(): void {
+    this.loginService.login(this.email, this.password).subscribe(
+      () => {
+        this.router.navigate(['/simulations']); // Redirect to simulations after login
+      },
+      error => {
+        console.error('Login failed', error);
+      }
+    );
   }
 }

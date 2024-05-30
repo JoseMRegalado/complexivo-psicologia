@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ConsultasService} from "../../../services/consultas.service";
 import Simulacion from "../../../interfaces/simulation.interface";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 
@@ -17,7 +17,8 @@ export class Step1Component implements OnInit {
   constructor(
     private activatedRoute: ActivatedRoute,
     private consultasService: ConsultasService,
-    private sanitizer: DomSanitizer
+    private sanitizer: DomSanitizer,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -29,6 +30,7 @@ export class Step1Component implements OnInit {
             this.simulaciones = simulacion;
             this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.simulaciones?.video || '');
             console.log(this.simulaciones);
+            console.log(this.simulaciones?.video);
           },
           error => {
             console.error('Error al obtener la simulación: ', error);
@@ -47,6 +49,14 @@ export class Step1Component implements OnInit {
       link.click();
     } else {
       console.error('No hay archivo para descargar.');
+    }
+  }
+
+  irAStep2(): void {
+    if (this.simulaciones) {
+      this.router.navigate(['/step2', this.simulaciones.id]);
+    } else {
+      console.error('Simulación no disponible.');
     }
   }
 

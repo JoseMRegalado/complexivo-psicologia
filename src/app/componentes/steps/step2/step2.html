@@ -1,0 +1,17 @@
+<app-header></app-header>
+<section >
+  <h2>Ronda de Preguntas</h2>
+  <p>The Nextcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.</p>
+  <!-- Add more details as necessary -->
+</section>
+<section class="questions-list" *ngIf="preguntas.length > 0">
+  <div class="question-item" *ngFor="let pregunta of preguntas">
+    <div class="question-title">{{ pregunta.titulo }}</div>
+    <button class="test-button" (click)="realizarTest(pregunta.id)">
+      Realizar test
+    </button>
+  </div>
+  <button class="next-button">Siguiente</button>
+</section>
+<app-footer></app-footer>
+

@@ -23,5 +23,10 @@
   <span>{{ simulaciones.descripcion }}</span>
   </div>
 
+
+
 </section>
+<div class="navigate-to-step2" *ngIf="simulaciones">
+  <button (click)="irAStep2()">Siguiente</button>
+</div>
 <app-footer></app-footer>

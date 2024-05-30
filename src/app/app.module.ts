@@ -17,17 +17,19 @@ import {ConsultasService} from "./services/consultas.service";
 import {HeaderComponent} from "./componentes/header/header";
 import {HomeComponent} from "./componentes/home/home";
 import {FooterComponent} from "./componentes/footer/footer";
+import {Step2Component} from "./componentes/steps/step2/step2";
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'simulations', component: SimulationsComponent },
   { path: 'step1', component: Step1Component},
   {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent},
 ];
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, SimulationsComponent, Step1Component, HeaderComponent, HomeComponent,
-    FooterComponent
+    FooterComponent, Step2Component
   ],
 
   imports: [
