@@ -1,0 +1,60 @@
+.rondaPreguntas{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.rondaPreguntas p{
+  width: 438px;
+  font-size: 11px;
+}
+
+.questions-list{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.question-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  height: 70px;
+
+}
+
+.question-title{
+  padding-left: 10px;
+  font-size: 17px;
+}
+
+.test-button{
+  padding: 5px 10px;
+  border: none;
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  background-color: #3f88c5;
+  font-size: 16px;
+  width: 145px;
+  height:46px;
+}
+
+.aling-button{
+  display: flex;
+  justify-content: flex-end;
+
+}
+.next-button{
+  width:95px;
+  height: 36px;
+  border: 2px solid #044170;
+  border-radius: 5px;
+  cursor: pointer;
+
+
+}
+
