@@ -1,8 +1,8 @@
-export default interface Simulacion {
+export default interface Simulation {
   id: string,
-  nombre: string,
-  descripcion: string,
+  name: string,
+  description: string,
   rating: number,
-  archivo: string,
+  archive: string,
   video: string
 }

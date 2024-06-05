@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ConsultasService} from "../../../services/consultas.service";
-import Simulacion from "../../../interfaces/simulation.interface";
+import Simulation from "../../../interfaces/simulation.interface";
 import {ActivatedRoute, Router} from "@angular/router";
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
@@ -11,7 +11,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   styleUrls: ['./step1.css']
 })
 export class Step1Component implements OnInit {
-  simulaciones: Simulacion | undefined;
+  simulations: Simulation | undefined;
   videoUrl: SafeResourceUrl | undefined;
 
   constructor(
@@ -27,10 +27,10 @@ export class Step1Component implements OnInit {
       if (id) {
         this.consultasService.obtenerSimulacionPorId(id).subscribe(
           simulacion => {
-            this.simulaciones = simulacion;
-            this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.simulaciones?.video || '');
-            console.log(this.simulaciones);
-            console.log(this.simulaciones?.video);
+            this.simulations = simulacion;
+            this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.simulations?.video || '');
+            console.log(this.simulations);
+            console.log(this.simulations?.video);
           },
           error => {
             console.error('Error al obtener la simulación: ', error);
@@ -53,8 +53,8 @@ export class Step1Component implements OnInit {
   }
 
   irAStep2(): void {
-    if (this.simulaciones) {
-      this.router.navigate(['/step2', this.simulaciones.id]);
+    if (this.simulations) {
+      this.router.navigate(['/step2', this.simulations.id]);
     } else {
       console.error('Simulación no disponible.');
     }

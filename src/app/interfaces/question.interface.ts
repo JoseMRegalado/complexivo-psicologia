@@ -2,7 +2,7 @@ import {Opcion} from "./option.interface";
 
 export default interface Pregunta {
   id: string;
-  titulo: string;
-  id_simulacion: string;
-  opciones: Opcion[];
+  title: string;
+  id_test: string;
+  options: Opcion[];
 }

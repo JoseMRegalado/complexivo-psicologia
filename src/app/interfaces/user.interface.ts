@@ -1,4 +1,4 @@
-export default interface Usuario {
+export default interface User {
   id: string,
-  nombre: string
+  name: string
 }

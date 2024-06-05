@@ -35,6 +35,27 @@
 
 }
 
+.aling-button{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10em;
+  margin-bottom: 10px;
+}
+.next-button{
+  width:95px;
+  height: 36px;
+  border: 2px solid #044170;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.buttonArc{
+  cursor: pointer;
+  background-color: white;
+  border: none;
+}
+
+
 .descarga{
   margin-left: 20px;
   display: flex;

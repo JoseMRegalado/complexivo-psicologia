@@ -1,32 +1,28 @@
 <app-header></app-header>
 <section class="video">
-  <div class="video-container" *ngIf="simulaciones" >
-  <iframe [src]="videoUrl"
-          width="740" height="460" frameborder="0" scrolling="no" allowfullscreen
-          title="pythonProject – main.py 2023-01-23 21-50-48.mp4">
-  </iframe>
-  </div>
+  <div class="video-container" *ngIf="simulations" >
+    <iframe src="https://utpl-my.sharepoint.com/personal/sjjumbo3_utpl_edu_ec/_layouts/15/embed.aspx?UniqueId=032ad334-20b5-4cd5-bb83-1335322a1813&embed=%7B%22hvm%22%3Atrue%2C%22ust%22%3Atrue%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="2024-04-17 10-29-11.mkv"></iframe>  </div>
 
-  <div class="descripcion" *ngIf="simulaciones">
+  <div class="descripcion" *ngIf="simulations">
     <div class="titulo">
-      <h2>{{ simulaciones.nombre }}</h2>
+      <h2>{{ simulations.name }}</h2>
       <div class="descarga">
         <img src="assets/img/Descargar.svg" alt="Boton descarga" >
-        <div *ngIf="simulaciones">
-          <button *ngIf="simulaciones.archivo" (click)="descargarArchivo(simulaciones.archivo)">Descargar Documento</button>
-          <span *ngIf="!simulaciones.archivo">No hay documento disponible para descargar.</span>
+        <div *ngIf="simulations">
+          <button class="buttonArc" *ngIf="simulations.archive" (click)="descargarArchivo(simulations.archive)">Descargar Documento</button>
+          <span *ngIf="!simulations.archive">No hay documento disponible para descargar.</span>
         </div>
       </div>
 
     </div>
 
-  <span>{{ simulaciones.descripcion }}</span>
+  <span>{{ simulations.description }}</span>
   </div>
 
 
 
 </section>
-<div class="navigate-to-step2" *ngIf="simulaciones">
-  <button (click)="irAStep2()">Siguiente</button>
+<div class="aling-button" *ngIf="simulations">
+  <button class="next-button" (click)="irAStep2()">Siguiente</button>
 </div>
 <app-footer></app-footer>

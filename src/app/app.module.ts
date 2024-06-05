@@ -18,6 +18,7 @@ import {HeaderComponent} from "./componentes/header/header";
 import {HomeComponent} from "./componentes/home/home";
 import {FooterComponent} from "./componentes/footer/footer";
 import {Step2Component} from "./componentes/steps/step2/step2";
+import {TestsComponent} from "./componentes/steps/step2/questions/tests";
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -25,11 +26,12 @@ const appRoutes: Routes = [
   { path: 'step1', component: Step1Component},
   {path: 'home', component: HomeComponent},
   {path: '', component: HomeComponent},
+  {path: 'test', component: TestsComponent},
 ];
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, SimulationsComponent, Step1Component, HeaderComponent, HomeComponent,
-    FooterComponent, Step2Component
+    FooterComponent, Step2Component,  TestsComponent
   ],
 
   imports: [

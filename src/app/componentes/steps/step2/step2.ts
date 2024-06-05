@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { ConsultasService } from '../../../services/consultas.service';
-import Pregunta from '../../../interfaces/question.interface';
+import Test from "../../../interfaces/test.interface";
 
 @Component({
   selector: 'app-step2',
@@ -9,21 +9,22 @@ import Pregunta from '../../../interfaces/question.interface';
   styleUrls: ['./step2.css']
 })
 export class Step2Component implements OnInit {
-  preguntas: Pregunta[] = [];
+  tests: Test[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private consultasService: ConsultasService
+    private consultasService: ConsultasService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id) {
-        this.consultasService.obtenerPreguntasPorSimulacionId(id).subscribe(
-          preguntas => {
-            this.preguntas = preguntas;
-            console.log(this.preguntas);
+        this.consultasService.obtenerTestPorSimulacionId(id).subscribe(
+          tests => {
+            this.tests = tests;
+            console.log(this.tests);
           },
           error => {
             console.error('Error al obtener las preguntas: ', error);
@@ -33,7 +34,7 @@ export class Step2Component implements OnInit {
     });
   }
 
-  realizarTest(idPregunta: string): void {
-    console.log(`Iniciar test para la pregunta con ID: ${idPregunta}`);
+  realizarTest(idTest: string): void {
+    this.router.navigate(['/test', idTest]);
   }
 }

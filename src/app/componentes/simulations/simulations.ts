@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ConsultasService} from "../../services/consultas.service";
-import Simulacion from "../../interfaces/simulation.interface";
+import Simulation from "../../interfaces/simulation.interface";
 
 
 @Component({
@@ -9,7 +9,7 @@ import Simulacion from "../../interfaces/simulation.interface";
   styleUrls: ['./simulations.css']
 })
 export class SimulationsComponent implements OnInit {
-  simulaciones: Simulacion[] = [];
+  simulaciones: Simulation[] = [];
 
   constructor(private consultasService: ConsultasService) { }
 
