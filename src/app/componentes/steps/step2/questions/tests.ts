@@ -6,7 +6,8 @@ import Pregunta from "../../../../interfaces/question.interface";
 
 @Component({
   selector: 'app-tests',
-  templateUrl: './tests.html'
+  templateUrl: './tests.html',
+  styleUrls: ['./tests.css']
 })
 export class TestsComponent implements OnInit {
   preguntas: Pregunta[] = [];

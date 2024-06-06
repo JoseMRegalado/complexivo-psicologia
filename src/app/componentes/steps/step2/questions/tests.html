@@ -1,12 +1,30 @@
-<h1>{{ testTitle }}</h1>
-<div *ngIf="preguntas.length > 0">
+<app-header></app-header>
+<section class="questions-section">
+  <div class="informacion-pregunta">
+    <h2>{{ testTitle }}</h2>
+    <p>The Nextcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.</p>
+  </div>
 
-  <h2>{{ preguntas[preguntaActualIndex].title }}</h2>
-  <ul>
-    <li *ngFor="let option of preguntas[preguntaActualIndex].options">{{ option.text }}</li>
-  </ul>
-  <button (click)="anteriorPregunta()" [disabled]="preguntaActualIndex === 0">Anterior</button>
-  <button (click)="siguientePregunta()" [disabled]="preguntaActualIndex === preguntas.length - 1">Siguiente</button>
-  <button (click)="finalizarTest()" *ngIf="preguntaActualIndex === preguntas.length - 1">Finalizar</button>
-</div>
+  <div *ngIf="preguntas.length > 0">
+    <div class="questions-container">
+      <div class="specific-question-title">
+        <h3>Pregunta</h3>
+        <div class="question">{{ preguntas[preguntaActualIndex].title }}</div>
+      </div>
+      <div class="options-container">
+        <h3>Opciones</h3>
+          <div class="options" *ngFor="let option of preguntas[preguntaActualIndex].options">{{ option.text }}</div>
+      </div>
+    </div>
+
+    <div class="aling-button">
+      <button *ngIf="preguntaActualIndex > 0" (click)="anteriorPregunta()">Anterior</button>
+      <button *ngIf="preguntaActualIndex < preguntas.length - 1" (click)="siguientePregunta()">Siguiente</button>
+      <button *ngIf="preguntaActualIndex === preguntas.length - 1" (click)="finalizarTest()">Finalizar</button>
+    </div>
+
+  </div>
+</section>
+
+<app-footer></app-footer>
 
