@@ -1,8 +1,10 @@
 <app-header></app-header>
+<app-progress-bar [step]="2"></app-progress-bar>
+
 <section class="questions-section">
   <div class="informacion-pregunta">
     <h2>{{ testTitle }}</h2>
-    <p>The Nextcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.</p>
+    <p >{{testDescription}}</p>
   </div>
 
   <div *ngIf="preguntas.length > 0">
@@ -13,7 +15,12 @@
       </div>
       <div class="options-container">
         <h3>Opciones</h3>
-          <div class="options" *ngFor="let option of preguntas[preguntaActualIndex].options">{{ option.text }}</div>
+        <div class="options"
+             *ngFor="let option of preguntas[preguntaActualIndex].options"
+             [ngClass]="{'selected': preguntas[preguntaActualIndex].selectedOptions!.includes(option)}"
+             (click)="seleccionarOpcion(preguntas[preguntaActualIndex], option)">
+          {{ option.text }}
+        </div>
       </div>
     </div>
 
@@ -22,9 +29,7 @@
       <button *ngIf="preguntaActualIndex < preguntas.length - 1" (click)="siguientePregunta()">Siguiente</button>
       <button *ngIf="preguntaActualIndex === preguntas.length - 1" (click)="finalizarTest()">Finalizar</button>
     </div>
-
   </div>
 </section>
 
 <app-footer></app-footer>
-

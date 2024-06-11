@@ -57,3 +57,8 @@
 
 }
 
+.question-item .completado {
+  background-color: green;
+  color: white;
+}
+

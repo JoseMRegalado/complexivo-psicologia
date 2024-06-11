@@ -5,4 +5,5 @@ export default interface Pregunta {
   title: string;
   id_test: string;
   options: Opcion[];
+  selectedOptions?: Opcion[];
 }

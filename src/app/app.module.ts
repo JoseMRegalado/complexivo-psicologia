@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { HttpClientModule } from '@angular/common/http'; // Importar HttpClientModule
+
 import { AppComponent } from './app.component';
 import {AngularFireModule} from "@angular/fire/compat";
 import {initializeApp, provideFirebaseApp} from "@angular/fire/app";
@@ -19,6 +21,7 @@ import {HomeComponent} from "./componentes/home/home";
 import {FooterComponent} from "./componentes/footer/footer";
 import {Step2Component} from "./componentes/steps/step2/step2";
 import {TestsComponent} from "./componentes/steps/step2/questions/tests";
+import {ProgressBarComponent} from "./componentes/progressBar/progressBar";
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -31,12 +34,13 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, SimulationsComponent, Step1Component, HeaderComponent, HomeComponent,
-    FooterComponent, Step2Component,  TestsComponent
+    FooterComponent, Step2Component,  TestsComponent, ProgressBarComponent
   ],
 
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
     BrowserModule,
+    HttpClientModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
     FormsModule,

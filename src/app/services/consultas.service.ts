@@ -8,12 +8,13 @@ import firebase from 'firebase/compat/app';
 import QuerySnapshot = firebase.firestore.QuerySnapshot;
 import Test from "../interfaces/test.interface";
 import {Opcion} from "../interfaces/option.interface";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConsultasService {
-  constructor(private firestore: AngularFirestore) {}
+  constructor(private firestore: AngularFirestore, private http: HttpClient) {}
 
   obtenerSimulaciones(): Observable<Simulation[]> {
     const simulacionesRef = this.firestore.collection<Simulation>('simulation');
@@ -45,6 +46,19 @@ export class ConsultasService {
     return docRef.get().pipe(
       map(doc => doc.exists ? doc.data() as Test : undefined)
     );
+  }
+
+  actualizarEstadoTest(testId: string, state: string): Observable<void> {
+    return new Observable<void>((observer) => {
+      this.firestore.collection('test').doc(testId).update({ state })
+        .then(() => {
+          observer.next();
+          observer.complete();
+        })
+        .catch((error) => {
+          observer.error(error);
+        });
+    });
   }
 
 

@@ -8,6 +8,12 @@
 .informacion-pregunta h2{
   font-size: 25px;
 }
+
+.options.selected {
+  background-color: #3F88C5;
+  color: white;
+}
+
 .informacion-pregunta p{
   width: 438px;
   font-size: 11px;
@@ -53,6 +59,7 @@
   height: 38px;
   font-size: 17px;
   width: 552px;
+  cursor: pointer;
 }
 
 .questions-container h3{

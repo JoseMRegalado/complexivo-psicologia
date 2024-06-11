@@ -4,5 +4,6 @@ export default interface Simulation {
   description: string,
   rating: number,
   archive: string,
-  video: string
+  video: string,
+  step: number
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ConsultasService } from '../../../services/consultas.service';
 import Test from "../../../interfaces/test.interface";
 
@@ -10,6 +10,7 @@ import Test from "../../../interfaces/test.interface";
 })
 export class Step2Component implements OnInit {
   tests: Test[] = [];
+  simulationId: string = '';
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -21,6 +22,7 @@ export class Step2Component implements OnInit {
     this.activatedRoute.paramMap.subscribe(params => {
       const id = params.get('id');
       if (id) {
+        this.simulationId = id; // Guardar el id de la simulación
         this.consultasService.obtenerTestPorSimulacionId(id).subscribe(
           tests => {
             this.tests = tests;
@@ -34,7 +36,7 @@ export class Step2Component implements OnInit {
     });
   }
 
-  realizarTest(idTest: string): void {
-    this.router.navigate(['/test', idTest]);
+  realizarTest(idTest: string, simulationId: string): void {
+    this.router.navigate(['/test', idTest], { queryParams: { simulationId } });
   }
 }

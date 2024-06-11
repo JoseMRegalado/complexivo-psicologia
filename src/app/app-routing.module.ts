@@ -12,8 +12,7 @@ const routes: Routes = [
   { path: 'step1/:id', component: Step1Component },
   { path: 'step2/:id', component: Step2Component },
   { path: 'simulations', component: SimulationsComponent, canActivate: [AuthGuard] },
-  { path: 'test/:testId', component: TestsComponent },
-  { path: '', redirectTo: '/step2', pathMatch: 'full' }
+  { path: 'test/:testId', component: TestsComponent }
 ];
 
 @NgModule({
