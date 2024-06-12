@@ -12,7 +12,7 @@
     <button class="test-button"
             [ngClass]="{'completado': test.state === 'completado'}"
             (click)="realizarTest(test.id, simulationId)">
-      Realizar test
+      {{ test.state === 'completado' ? 'Test Realizado' : 'Realizar Test' }}
     </button>
   </div>
   <div class="aling-button">
