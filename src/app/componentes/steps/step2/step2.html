@@ -1,15 +1,17 @@
 <app-header></app-header>
 <app-progress-bar [step]="2"></app-progress-bar>
 
-<section class="rondaPreguntas" >
+<section class="rondaPreguntas">
   <h2>Ronda de Preguntas</h2>
   <p>The Nextcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.</p>
   <!-- Add more details as necessary -->
 </section>
 <section class="questions-list" *ngIf="tests.length > 0">
-  <div class="question-item" *ngFor="let test of tests " [ngClass]="{'completado': test.state === 'completado'}">
+  <div class="question-item" *ngFor="let test of tests">
     <div class="question-title">{{ test.title }}</div>
-    <button class="test-button" (click)="realizarTest(test.id, simulationId)">
+    <button class="test-button"
+            [ngClass]="{'completado': test.state === 'completado'}"
+            (click)="realizarTest(test.id, simulationId)">
       Realizar test
     </button>
   </div>
@@ -18,4 +20,3 @@
   </div>
 </section>
 <app-footer></app-footer>
-

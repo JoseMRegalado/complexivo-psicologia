@@ -74,3 +74,8 @@
   line-height: 24px;
 }
 
+.video-detalles{
+  border-radius: 10px;
+  border: 2px solid rgba(4, 65, 112, 1);
+
+}

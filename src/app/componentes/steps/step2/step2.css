@@ -57,7 +57,7 @@
 
 }
 
-.question-item .completado {
+.test-button.completado {
   background-color: green;
   color: white;
 }
