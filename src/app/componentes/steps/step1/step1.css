@@ -25,6 +25,7 @@
 .titulo img{
   width: 42px;
   height: 34px;
+  cursor: pointer;
 }
 
 .titulo button{

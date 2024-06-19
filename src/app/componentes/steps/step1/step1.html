@@ -7,7 +7,7 @@
     <div class="titulo">
       <h2>{{ simulations.name }}</h2>
       <div class="descarga">
-        <img src="assets/img/Descargar.svg" alt="Boton descarga" >
+        <img *ngIf="simulations.archive" (click)="descargarArchivo(simulations.archive)" src="assets/img/Descargar.svg" alt="Boton descarga" >
         <div *ngIf="simulations">
           <button class="buttonArc" *ngIf="simulations.archive" (click)="descargarArchivo(simulations.archive)">Descargar Documento</button>
           <span *ngIf="!simulations.archive">No hay documento disponible para descargar.</span>

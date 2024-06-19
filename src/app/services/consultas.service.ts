@@ -9,6 +9,7 @@ import QuerySnapshot = firebase.firestore.QuerySnapshot;
 import Test from "../interfaces/test.interface";
 import {Opcion} from "../interfaces/option.interface";
 import {HttpClient} from "@angular/common/http";
+import Pregunta1 from "../interfaces/question1.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -86,7 +87,18 @@ export class ConsultasService {
         return forkJoin(opcionesObservables);
       })
     );
+  }
 
+  obtenerPreguntasPorSimulacionId(idSimulacion: string): Observable<Pregunta1[]> {
+    const preguntasRef = this.firestore.collection<Pregunta1>('question1', ref =>
+      ref.where('id_simulation', '==', idSimulacion)
+    );
+
+    return preguntasRef.get().pipe(
+      map((querySnapshot: QuerySnapshot<Pregunta1>) => {
+        return querySnapshot.docs.map(doc => doc.data());
+      })
+    );
   }
 
 }

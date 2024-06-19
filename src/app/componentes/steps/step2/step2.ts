@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ConsultasService } from '../../../services/consultas.service';
 import Test from "../../../interfaces/test.interface";
+import Simulation from "../../../interfaces/simulation.interface";
 
 @Component({
   selector: 'app-step2',
@@ -39,4 +40,10 @@ export class Step2Component implements OnInit {
   realizarTest(idTest: string, simulationId: string): void {
     this.router.navigate(['/test', idTest], { queryParams: { simulationId } });
   }
+
+  irAStep3(): void {
+    this.router.navigate(['/step3', this.simulationId]);
+  }
+
+
 }
