@@ -1,48 +1,60 @@
 <app-header></app-header>
 <app-progress-bar [step]="3"></app-progress-bar>
 <section class="estudio-de-caso">
-  <h2>Estudio de caso: Trastorno del estado de ánimo</h2>
-  <p>El trastorno depresivo (o depresión) es un trastorno mental común. Implica un estado de ánimo deprimido o la
+  <div class="caso">
+
+    <div class="texto">
+      <h2>Estudio de caso: Trastorno del estado de ánimo</h2>
+      <p>El trastorno depresivo (o depresión) es un trastorno mental común. Implica un estado de ánimo deprimido o la
     pérdida del placer o el interés por actividades durante largos períodos de tiempo. La depresión es distinta de
     los cambios habituales del estado de ánimo y los sentimientos sobre el día a día. Puede afectar a todos los ámbitos
     de la vida, incluidas las relaciones familiares, de amistad y las comunitarias. Puede deberse a problemas en la
     escuela y laborales o causarlos. La depresión puede afectar a cualquiera. Quienes han vivido abusos, pérdidas
     graves u otros eventos estresantes tienen más probabilidades de sufrirla. Las mujeres son más propensas a la
     depresión que los hombres.</p>
-  <!-- Agrega el contenido necesario aquí -->
-</section>
+    </div>
 
-<section class="pregunta">
-  <div class="titulo-pregunta" *ngIf="preguntaActual">
-    <h3>{{ preguntaActual()?.title }}</h3>
-  </div>
-  <div class="contenido-pregunta">
-    <p>{{ preguntaActual()?.title }}</p>
-    <p>{{ preguntaActual()?.description }}</p>
-  </div>
-  <div class="respuesta">
-    <textarea rows="4" cols="50" placeholder="Escribe tu respuesta aquí" [(ngModel)]="miRespuesta"></textarea>
-  </div>
-  <div class="acciones">
-    <button *ngIf="preguntaActualIndex > 0" class="boton-anterior" (click)="preguntaAnterior()">Anterior</button>
-    <button *ngIf="preguntaActualIndex < preguntas.length - 1" class="boton-siguiente" (click)="siguientePregunta()">Siguiente</button>
-    <button *ngIf="preguntaActualIndex === preguntas.length - 1" class="boton-finalizar" [routerLink]="['/simulations']" (click)="finalizarSimulacion()">Finalizar</button>
-    <button class="boton-chatgpt" (click)="mostrarRespuestaEnChatGpt()">Chat GPT</button>
-  </div>
-</section>
+    <div class="preguntas">
+      <div class="titulo-pregunta" *ngIf="preguntaActual">
+        <h3>{{ preguntaActual()?.title }}</h3>
+      </div>
+      <div class="contenido-pregunta">
+        <p>{{ preguntaActual()?.title }}</p>
+        <p>{{ preguntaActual()?.description }}</p>
+      </div>
+      <div class="respuesta">
+        <textarea rows="4" cols="50" placeholder="Escribe tu respuesta aquí" [(ngModel)]="miRespuesta"></textarea>
+      </div>
+      <div class="acciones">
+        <button *ngIf="preguntaActualIndex > 0" class="boton-anterior" (click)="preguntaAnterior()">Anterior</button>
+        <button *ngIf="preguntaActualIndex < preguntas.length - 1" class="boton-siguiente" (click)="siguientePregunta()">Siguiente</button>
+        <button *ngIf="preguntaActualIndex === preguntas.length - 1" class="boton-finalizar" [routerLink]="['/simulations']" (click)="finalizarSimulacion()">Finalizar</button>
+        <button class="boton-chatgpt" (click)="mostrarRespuestaEnChatGpt()">Chat GPT</button>
+      </div>
+    </div>
 
-<section class="chatgpt" >
-  <div class="chatgpt-respuesta">
-    <h3>Chat GPT</h3>
+
+    </div>
+
+
+    <div class="chatgpt-respuesta">
+
+      <div class="enviar-respuesta">
+        <h3>Chat GPT</h3>
+        <button (click)="enviarRespuesta()">Enviar</button>
+      </div>
     <h4>Mi respuesta</h4>
     <textarea *ngIf="mostrarChatGptRespuesta" rows="4" cols="50" placeholder="Mi respuesta" [(ngModel)]="miRespuesta" readonly></textarea>
-    <button (click)="enviarRespuesta()">Enviar</button>
-  </div>
-  <div class="chatgpt-analisis" >
-    <h4>Análisis de Chat GPT</h4>
-    <p>{{ analisisChatGpt }}</p>
-    <button (click)="limpiar()">Limpiar</button>
+
+      <div class="chatgpt-analisis" >
+        <h4>Análisis de Chat GPT</h4>
+        <p>{{ analisisChatGpt }}</p>
+        <button (click)="limpiar()">Limpiar</button>
+      </div>
+
+
   </div>
 </section>
+
 
 <app-footer></app-footer>

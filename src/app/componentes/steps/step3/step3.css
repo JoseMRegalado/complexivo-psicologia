@@ -1,0 +1,155 @@
+.estudio-de-caso {
+  display: flex;
+  padding: 20px;
+  margin: 20px auto;
+  justify-content: space-evenly;
+}
+
+.texto{
+  width: 800px;
+  height: 226px;
+}
+
+.preguntas{
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(217, 217, 217);
+  width: 800px;
+  height: 226px;
+  background-color: rgb(217, 217, 217);
+}
+
+.titulo-pregunta h3{
+  background-color: rgb(139, 155, 182);
+  text-align: center;
+  color: white;
+}
+
+.chatgpt-respuesta{
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(217, 217, 217);
+  width: 334px;
+  height: 472px;
+  background-color: rgb(217, 217, 217);
+}
+
+.estudio-de-caso h2 {
+  color: #333;
+}
+
+.estudio-de-caso p {
+  color: #666;
+}
+
+.pregunta {
+
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.titulo-pregunta h3 {
+  color: #333;
+}
+
+.contenido-pregunta p {
+  color: #666;
+}
+
+.respuesta textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.acciones {
+  margin-top: 20px;
+}
+
+.acciones button {
+  background-color: rgb(0, 66, 113);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.acciones button.boton-anterior {
+  background-color: #6c757d;
+}
+
+.acciones button.boton-finalizar {
+  background-color: #28a745;
+}
+
+.acciones button.boton-chatgpt {
+  background-color: rgb(0, 66, 113);
+}
+
+.chatgpt {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(217, 217, 217);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.chatgpt-respuesta,
+.chatgpt-analisis {
+  margin-top: 20px;
+}
+
+.chatgpt-respuesta h4,
+.chatgpt-analisis h4 {
+  color: #333;
+}
+
+.chatgpt-respuesta textarea
+ {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+
+}
+
+.chatgpt-respuesta button{
+  background-color: rgb(0, 66, 113);
+  color: white;
+  border: none;
+  padding: 3px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+
+}
+
+
+.enviar-respuesta{
+  display: flex;
+  justify-content: space-between;
+}
+
+.chatgpt-analisis p{
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: white;
+}
+
+.chatgpt-analisis button{
+  margin-top: 10px;
+}
