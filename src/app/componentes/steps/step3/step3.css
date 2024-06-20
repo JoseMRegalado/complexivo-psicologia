@@ -15,14 +15,20 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgb(217, 217, 217);
   width: 800px;
-  height: 226px;
+  height: 260px;
   background-color: rgb(217, 217, 217);
 }
+
 
 .titulo-pregunta h3{
   background-color: rgb(139, 155, 182);
   text-align: center;
   color: white;
+  padding: 3px 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 0 auto;
+
 }
 
 .chatgpt-respuesta{
@@ -57,6 +63,12 @@
 
 .contenido-pregunta p {
   color: #666;
+  padding-top: 10px;
+}
+
+.contenido-pregunta h3 {
+  color: rgb(0, 66, 113);
+  padding-top: 10px;
 }
 
 .respuesta textarea {
@@ -135,7 +147,6 @@
 
 }
 
-
 .enviar-respuesta{
   display: flex;
   justify-content: space-between;
@@ -152,4 +163,8 @@
 
 .chatgpt-analisis button{
   margin-top: 10px;
+}
+
+.chatgpt-analisis{
+  text-align: center;
 }
