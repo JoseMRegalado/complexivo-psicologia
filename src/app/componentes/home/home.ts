@@ -9,11 +9,23 @@ import Simulation from "../../interfaces/simulation.interface";
   styleUrls: ['./home.css']
 })
 export class HomeComponent implements OnInit {
-
+  simulaciones: Simulation[] = [];
   constructor(private consultasService: ConsultasService) { }
 
   ngOnInit(): void {
+    this.obtenerSimulaciones();
+  }
 
+  obtenerSimulaciones(): void {
+    this.consultasService.obtenerSimulaciones().subscribe(
+      simulaciones => {
+        this.simulaciones = simulaciones;
+        console.log(this.simulaciones);
+      },
+      error => {
+        console.error('Error al obtener las simulations: ', error);
+      }
+    );
   }
 
 

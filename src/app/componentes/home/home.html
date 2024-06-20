@@ -111,20 +111,11 @@
     <p>The Nextcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.​</p>
   </div>
 
-  <div class="contenido5">
-    <div class="slide">
+  <div class="contenido5" >
+    <div class="slide" *ngFor="let simulacion of simulaciones">
       <img src="assets/img/image 18.svg" alt="Imagen_18">
-      <p>Creating Streamlined Safeguarding Processes with OneRen</p>
-      <h3>Leer más</h3>
-    </div>
-    <div class="slide">
-      <img src="assets/img/image 19.svg" alt="Imagen_19">
-      <p>What are your safeguarding responsibilities and how can you manage them?</p>
-      <h3>Leer más</h3>
-    </div>
-    <div class="slide">
-      <img src="assets/img/image 20.svg" alt="Imagen_20">
-      <p>What are your safeguarding responsibilities and how can you manage them?</p>
+      <h3>{{simulacion.name}}</h3>
+      <p>{{simulacion.short}}</p>
       <h3>Leer más</h3>
     </div>
   </div>

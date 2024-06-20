@@ -241,7 +241,9 @@
 
 .contenido5 {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  overflow-x: auto; /*Esto hace que te puedas desplazar*/
   width: 100%;
   gap: 15%;
   margin-bottom: 15px;
@@ -277,3 +279,5 @@
 .slide p {
   padding-bottom: 15px;
 }
+
+
