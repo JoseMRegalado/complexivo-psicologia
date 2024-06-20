@@ -272,8 +272,14 @@
   height: 199.08px;
 }
 
-.slide h3 {
+.slide a {
   padding-bottom: 15px;
+  text-decoration: none;
+  color: #044170;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
 }
 
 .slide p {
