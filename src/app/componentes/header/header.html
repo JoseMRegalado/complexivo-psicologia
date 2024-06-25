@@ -13,11 +13,16 @@
 
   <nav class="navbar">
     <a [routerLink]="['/home']">Principal</a>
-    <a [routerLink]="['/simulations']">Simulaciones</a>
+    <a [routerLink]="['/simulations']" *ngIf="loggedIn">Simulaciones</a>
     <a href="#UTPL">UTPL</a>
     <a href="#Psicologia">Psicologia</a>
   </nav>
 
-  <a [routerLink]="['/login']" class="boton"><button>Iniciar Sesión</button></a>
-
+  <div class="auth-buttons" >
+    <a class="boton"><button *ngIf="!loggedIn" [routerLink]="['/login']">Iniciar Sesión</button></a>
+    <div *ngIf="loggedIn" class="user-info">
+      <span>{{ currentUser?.firstName }} {{ currentUser?.lastName }} {{currentUser?.email}}</span>
+      <a class="boton"><button  (click)="logout()">Cerrar Sesión</button></a>
+    </div>
+  </div>
 </header>

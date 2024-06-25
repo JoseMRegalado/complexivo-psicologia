@@ -10,6 +10,7 @@ import Test from "../interfaces/test.interface";
 import {Opcion} from "../interfaces/option.interface";
 import {HttpClient} from "@angular/common/http";
 import Pregunta1 from "../interfaces/question1.interface";
+import User from "../interfaces/user.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -23,6 +24,13 @@ export class ConsultasService {
       map((querySnapshot: QuerySnapshot<Simulation>) => {
         return querySnapshot.docs.map(doc => doc.data());
       })
+    );
+  }
+
+  obtenerUsuarioPorId(id: string): Observable<User | undefined> {
+    const docRef = this.firestore.collection<User>('user').doc(id);
+    return docRef.get().pipe(
+      map(doc => doc.exists ? doc.data() as User : undefined)
     );
   }
 
