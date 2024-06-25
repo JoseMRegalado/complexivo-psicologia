@@ -94,6 +94,13 @@
 
 }
 
+.info p{
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13.92px;
+  text-align: center;
+
+}
 .proyecto img {
   padding-bottom: 15px;
   width: 60px;
@@ -185,6 +192,14 @@
   font-size: 25px;
 }
 
+.informacion p{
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 13.92px;
+  text-align: left;
+
+}
+
 /* Seccion 4 tambien llamada Seccion 4 */
 .seccion4{
   display: flex;
@@ -197,27 +212,39 @@
   width: 520px;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
 .detalle p{
 
   font-size: 12px;
+  line-height: 17px;
+  font-weight: 500;
 }
 
 .detalle span{
 
   font-size: 14px;
   color: rgb(4, 65, 112);
+  font-weight: 600;
+  line-height: 19.5px;
 }
 
+.detalle h5{
+  font-size: 11.14px;
+  color:rgba(137, 147, 158, 1);
+  font-weight: 400;
+  line-height: 16.71px;
+;
+}
 /* Seccion 5 tambien llamada Seccion 5 */
 
 .seccion5 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2rem 9%;
   margin-top: 10px;
+  justify-content: center;
 
 }
 
@@ -225,6 +252,9 @@
   width:772.64px;
   text-align: center;
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7%;
 
 
 }
@@ -236,6 +266,8 @@
 .titulo5 p{
   justify-content: center;
   font-size: 11px;
+  width: 437px;
+  margin: auto;
 
 }
 
@@ -243,17 +275,10 @@
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  overflow-x: auto; /*Esto hace que te puedas desplazar*/
   width: 100%;
-  gap: 15%;
-  margin-bottom: 15px;
-}
-
-.contenido5 div {
-  flex: 1;
+  gap: 7%;
+  margin-bottom: 30px;
   text-align: center;
-  padding: 22.27px;
-  /* padding: 16.71px, 22.27px, 16.71px, 22.27px; */
 }
 
 .contenido5 p{
@@ -263,15 +288,25 @@
 
 .contenido5 h3{
   font-size: 14px;
+  color: rgba(113, 113, 113, 1);
 
 }
 
-.slide img {
+.slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imagen-simulacion{
   padding-bottom: 15px;
   width: 256.15px;
   height: 199.08px;
 }
-
+.img-simulacion img{
+  width: 100%;
+  height: auto;
+}
 .slide a {
   padding-bottom: 15px;
   text-decoration: none;
@@ -285,5 +320,20 @@
 .slide p {
   padding-bottom: 15px;
 }
+
+.contenedor-simulacion{
+  display: flex;
+  flex-direction: column;
+  gap:12px ;
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+  height: 123px;
+  background-color: rgb(245, 247, 250);
+  position: absolute;
+  margin-top: 140px;
+}
+
+
 
 
