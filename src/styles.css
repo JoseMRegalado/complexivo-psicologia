@@ -1,3 +1,5 @@
+@import "swiper/swiper.min.css";
+@import "swiper/swiper-bundle.css";
 :root{
   --blue: rgba(171, 190, 209, 0.4);
 

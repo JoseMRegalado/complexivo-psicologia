@@ -23,6 +23,7 @@ import {Step2Component} from "./componentes/steps/step2/step2";
 import {TestsComponent} from "./componentes/steps/step2/questions/tests";
 import {ProgressBarComponent} from "./componentes/progressBar/progressBar";
 import {Step3Component} from "./componentes/steps/step3/step3";
+import { SwiperModule } from 'swiper/angular';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -35,8 +36,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, SimulationsComponent, Step1Component, HeaderComponent, HomeComponent,
-    FooterComponent, Step2Component,  TestsComponent, ProgressBarComponent, Step3Component
+    FooterComponent, Step2Component,  TestsComponent, ProgressBarComponent, Step3Component,
   ],
+
 
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -48,7 +50,8 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
     provideStorage(() => getStorage()),
-    AppRoutingModule
+    AppRoutingModule,
+    SwiperModule
   ],
   providers: [ConsultasService],
   bootstrap: [AppComponent]
