@@ -73,4 +73,8 @@ export class LoginService {
   getCurrentUser(): Observable<User | null> {
     return this.currentUser.asObservable();
   }
+
+  private getEmailFirstPart(email: string): string {
+    return email.split('@')[0];
+  }
 }

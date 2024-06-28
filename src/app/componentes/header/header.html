@@ -21,8 +21,7 @@
   <div class="auth-buttons" >
     <a class="boton"><button *ngIf="!loggedIn" [routerLink]="['/login']">Iniciar Sesión</button></a>
     <div *ngIf="loggedIn" class="user-info">
-      <span>{{ currentUser?.firstName }} {{ currentUser?.lastName }} {{currentUser?.email}}</span>
-      <a class="boton"><button  (click)="logout()">Cerrar Sesión</button></a>
+      <a class="boton"><button  (click)="logout()"> <span>Cerrar Sesión</span> <span>({{emailFirstPart}})</span> </button></a>
     </div>
   </div>
 </header>

@@ -12,6 +12,7 @@ import {user} from "@angular/fire/auth";
 export class HeaderComponent implements OnInit {
   loggedIn: boolean = false;
   currentUser: User | null = null;
+  emailFirstPart: string = '';
 
   constructor(private loginService: LoginService, private router: Router) { }
 
@@ -21,6 +22,9 @@ export class HeaderComponent implements OnInit {
     });
     this.loginService.getCurrentUser().subscribe((user) => {
       this.currentUser = user;
+      if (user && user.email) {
+        this.emailFirstPart = this.getEmailFirstPart(user.email);
+      }
     });
   }
 
@@ -28,6 +32,10 @@ export class HeaderComponent implements OnInit {
     this.loginService.logout().subscribe(() => {
       this.router.navigate(['/home']);
     });
+  }
+
+  private getEmailFirstPart(email: string): string {
+    return email.split('@')[0];
   }
 
   protected readonly user = user;
