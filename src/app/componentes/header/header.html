@@ -8,14 +8,14 @@
 </head>
 <header>
   <div class="logo">
-    <img src="./assets/img/Logo-N.svg" alt="Logo">
+    <img [routerLink]="['/home']" src="./assets/img/Logo-N.svg" alt="Logo">
   </div>
 
   <nav class="navbar">
     <a [routerLink]="['/home']">Principal</a>
     <a [routerLink]="['/simulations']" *ngIf="loggedIn">Simulaciones</a>
-    <a href="#UTPL">UTPL</a>
-    <a href="#Psicologia">Psicologia</a>
+    <a href="https://www.utpl.edu.ec/" target="_blank">UTPL</a>
+    <a href="https://www.utpl.edu.ec/carreras/psicologia" target="_blank">Psicologia</a>
   </nav>
 
   <div class="auth-buttons" >
