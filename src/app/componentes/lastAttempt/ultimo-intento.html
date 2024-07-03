@@ -1,0 +1,15 @@
+<app-header></app-header>
+<div class="container">
+  <div class="titulo">
+    <h2>Último Intento</h2>
+  </div>
+
+  <section class="pregunta" *ngFor="let pregunta of preguntas">
+    <h5>{{pregunta.title}}<br></h5>
+    <p>{{pregunta.description}}</p>
+    <div class="respuesta">
+      <textarea rows="4" cols="50" readonly>{{obtenerRespuesta(pregunta.id)}}</textarea>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

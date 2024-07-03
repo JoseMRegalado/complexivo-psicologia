@@ -11,6 +11,7 @@ import {Opcion} from "../interfaces/option.interface";
 import {HttpClient} from "@angular/common/http";
 import Pregunta1 from "../interfaces/question1.interface";
 import User from "../interfaces/user.interface";
+import UserResponse from "../interfaces/userResponse.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -71,6 +72,8 @@ export class ConsultasService {
   }
 
 
+
+
   obtenerPreguntasPorTestId(idTest: string): Observable<Pregunta[]> {
     const preguntasRef = this.firestore.collection<Pregunta>('question', ref => ref.where('id_test', '==', idTest));
     return preguntasRef.get().pipe(
@@ -104,6 +107,35 @@ export class ConsultasService {
 
     return preguntasRef.get().pipe(
       map((querySnapshot: QuerySnapshot<Pregunta1>) => {
+        return querySnapshot.docs.map(doc => doc.data());
+      })
+    );
+  }
+
+  guardarRespuesta(idUsuario: string, idSimulacion: string, idPregunta: string, respuesta: string): Observable<void> {
+    const respuestaRef = this.firestore.collection<UserResponse>('user_responses');
+    const data: UserResponse = {
+      id_usuario: idUsuario,
+      id_simulacion: idSimulacion,
+      id_pregunta: idPregunta,
+      respuesta: respuesta
+    };
+    return new Observable<void>((observer) => {
+      respuestaRef.add(data).then(() => {
+        observer.next();
+        observer.complete();
+      }).catch((error) => {
+        observer.error(error);
+      });
+    });
+  }
+
+  obtenerRespuestasUsuario(idUsuario: string, idSimulacion: string): Observable<UserResponse[]> {
+    const respuestasRef = this.firestore.collection<UserResponse>('user_responses', ref =>
+      ref.where('id_usuario', '==', idUsuario).where('id_simulacion', '==', idSimulacion)
+    );
+    return respuestasRef.get().pipe(
+      map((querySnapshot: QuerySnapshot<UserResponse>) => {
         return querySnapshot.docs.map(doc => doc.data());
       })
     );

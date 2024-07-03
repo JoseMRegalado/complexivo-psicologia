@@ -24,6 +24,7 @@ import {TestsComponent} from "./componentes/steps/step2/questions/tests";
 import {ProgressBarComponent} from "./componentes/progressBar/progressBar";
 import {Step3Component} from "./componentes/steps/step3/step3";
 import { SwiperModule } from 'swiper/angular';
+import {UltimoIntentoComponent} from "./componentes/lastAttempt/ultimo-intento";
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -36,7 +37,7 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, SimulationsComponent, Step1Component, HeaderComponent, HomeComponent,
-    FooterComponent, Step2Component,  TestsComponent, ProgressBarComponent, Step3Component,
+    FooterComponent, Step2Component,  TestsComponent, ProgressBarComponent, Step3Component, UltimoIntentoComponent
   ],
 
 

@@ -9,6 +9,7 @@ import User from '../interfaces/user.interface';
 export class LoginService {
   private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   private currentUser: BehaviorSubject<User | null> = new BehaviorSubject<User | null>(null);
+  private currentUserId: BehaviorSubject<string | null> = new BehaviorSubject<string | null>(null);
 
   constructor(private afAuth: AngularFireAuth) {
     this.afAuth.authState.subscribe((user) => {
@@ -20,9 +21,11 @@ export class LoginService {
           lastName: user.displayName ? user.displayName.split(' ').slice(1).join(' ') : '',
           email: user.email || ''
         });
+        this.currentUserId.next(user.uid);
       } else {
         this.loggedIn.next(false);
         this.currentUser.next(null);
+        this.currentUserId.next(null);
       }
     });
   }
@@ -40,6 +43,7 @@ export class LoginService {
               lastName: user.displayName ? user.displayName.split(' ').slice(1).join(' ') : '',
               email: user.email || ''
             });
+            this.currentUserId.next(user.uid);
           }
           observer.next();
           observer.complete();
@@ -56,6 +60,7 @@ export class LoginService {
         .then(() => {
           this.loggedIn.next(false);
           this.currentUser.next(null);
+          this.currentUserId.next(null);
           observer.next();
           observer.complete();
         })
@@ -67,14 +72,13 @@ export class LoginService {
 
   isLoggedIn(): Observable<boolean> {
     return this.loggedIn.asObservable();
-
   }
 
   getCurrentUser(): Observable<User | null> {
     return this.currentUser.asObservable();
   }
 
-  private getEmailFirstPart(email: string): string {
-    return email.split('@')[0];
+  getCurrentUserId(): Observable<string | null> {
+    return this.currentUserId.asObservable();
   }
 }

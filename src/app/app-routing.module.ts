@@ -7,6 +7,7 @@ import {Step2Component} from "./componentes/steps/step2/step2";
 import {AuthGuard} from "./auth.guard";
 import {TestsComponent} from "./componentes/steps/step2/questions/tests";
 import {Step3Component} from "./componentes/steps/step3/step3";
+import {UltimoIntentoComponent} from "./componentes/lastAttempt/ultimo-intento";
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'step2/:id', component: Step2Component },
   { path: 'step3/:id', component: Step3Component },
   { path: 'simulations', component: SimulationsComponent, canActivate: [AuthGuard] },
-  { path: 'test/:testId', component: TestsComponent }
+  { path: 'test/:testId', component: TestsComponent },
+  { path: 'ultimo-intento/:id', component: UltimoIntentoComponent }
 ];
 
 @NgModule({

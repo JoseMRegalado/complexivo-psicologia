@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import Pregunta1 from "../../../interfaces/question1.interface";
 import {ConsultasService} from "../../../services/consultas.service";
+import {Observable} from "rxjs";
+import { LoginService } from '../../../services/login.service';
+import User from "../../../interfaces/user.interface";
 
 @Component({
   selector: 'app-step3',
@@ -15,10 +18,14 @@ export class Step3Component implements OnInit {
   miRespuesta: string = '';
   analisisChatGpt: string = '';
   mostrarChatGptRespuesta: boolean = false;
+  loggedIn: boolean = false;
+  currentUser: User | null = null;
+  currentUserId: string | null = null;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private consultasService: ConsultasService
-              ) { }
+              private consultasService: ConsultasService,
+              private loginService: LoginService
+  ) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe(params => {
@@ -35,15 +42,38 @@ export class Step3Component implements OnInit {
         );
       }
     });
+
+    this.loginService.isLoggedIn().subscribe(isLoggedIn => {
+      this.loggedIn = isLoggedIn;
+    });
+
+    this.loginService.getCurrentUser().subscribe(user => {
+      this.currentUser = user;
+    });
+
+    this.loginService.getCurrentUserId().subscribe(userId => {
+      this.currentUserId = userId;
+    });
   }
 
   siguientePregunta(): void {
-    if (this.preguntaActualIndex < this.preguntas.length - 1) {
-      this.preguntaActualIndex++;
-    }
-    this.miRespuesta = ''; // Limpiar la respuesta al avanzar a la siguiente pregunta
-    this.mostrarChatGptRespuesta = false; // Ocultar la sección de Chat GPT
-    this.analisisChatGpt = ''; // Limpiar el análisis
+    this.guardarRespuesta().subscribe(() => {
+      if (this.preguntaActualIndex < this.preguntas.length - 1) {
+        this.preguntaActualIndex++;
+      }
+      this.miRespuesta = ''; // Limpiar la respuesta al avanzar a la siguiente pregunta
+      this.mostrarChatGptRespuesta = false; // Ocultar la sección de Chat GPT
+      this.analisisChatGpt = ''; // Limpiar el análisis
+    }, error => {
+      console.error('Error al guardar la respuesta: ', error);
+    });
+  }
+
+  guardarRespuesta(): Observable<void> {
+    const preguntaActual = this.preguntaActual();
+    if (!preguntaActual || !this.currentUserId) return new Observable<void>((observer) => observer.complete());
+
+    return this.consultasService.guardarRespuesta(this.currentUserId, this.simulationId, preguntaActual.id, this.miRespuesta);
   }
 
   preguntaActual(): Pregunta1 | undefined {

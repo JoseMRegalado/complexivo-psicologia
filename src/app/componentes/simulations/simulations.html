@@ -1,8 +1,19 @@
-  <app-header></app-header>
+
+<app-header></app-header>
 <div class="container">
   <div class="titulo">
     <h2>Simulaciones</h2>
     <p>The Nextcent blog is the best place to read about the latest membership insights, trends and more. See who's joining the community, read about how our community are increasing their membership income and lot's more.​</p>
+  </div>
+
+  <!-- Modal -->
+  <div id="simulationModal" class="modal" *ngIf="mostrarModal">
+    <div class="modal-content">
+      <span class="close" (click)="cerrarModal()">&times;</span>
+      <h2>Opciones de Simulación</h2>
+      <button (click)="iniciarNuevoIntento()">Iniciar nuevo intento</button>
+      <button (click)="verUltimoIntento()">Ver último intento</button>
+    </div>
   </div>
 
   <section class="simulacion" *ngFor="let simulacion of simulaciones">
@@ -14,7 +25,7 @@
       {{simulacion.rating}} <br>
     </div>
 
-    <button [routerLink]="['/step1', simulacion.id]">Ir a la simulacion</button>
+    <button (click)="abrirModal(simulacion.id)">Ir a la simulacion</button>
 
   </section>
 </div>
