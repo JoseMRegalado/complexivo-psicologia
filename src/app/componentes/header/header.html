@@ -18,10 +18,19 @@
     <a href="https://www.utpl.edu.ec/carreras/psicologia" target="_blank">Psicologia</a>
   </nav>
 
+
+
   <div class="auth-buttons" >
+    <span>{{emailFirstPart}}</span>
     <a class="boton"><button *ngIf="!loggedIn" [routerLink]="['/login']">Iniciar Sesión</button></a>
     <div *ngIf="loggedIn" class="user-info">
-      <a class="boton"><button  (click)="logout()"> <span>Cerrar Sesión</span> <span>({{emailFirstPart}})</span> </button></a>
+      <a class="boton">
+        <button  (click)="logout()">
+          <span>
+            Cerrar Sesión
+          </span>
+        </button>
+      </a>
     </div>
   </div>
 </header>

@@ -1,0 +1,72 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.seccion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preguntas{
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(217, 217, 217);
+  width: 800px;
+  height: 190px;
+  background-color: rgb(217, 217, 217);
+}
+
+
+.titulo-pregunta h5{
+  background-color: rgb(139, 155, 182);
+  text-align: center;
+  color: white;
+  padding: 3px 20px;
+  border-radius: 10px;
+  width: 300px;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 15px;
+
+}
+
+
+.estudio-de-caso h2 {
+  color: #333;
+}
+
+.estudio-de-caso p {
+  color: #666;
+}
+
+.pregunta {
+
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+
+.contenido-pregunta p {
+  color: #666;
+  padding-top: 10px;
+}
+
+.contenido-pregunta h3 {
+  color: rgb(0, 66, 113);
+  padding-top: 10px;
+}
+
+.respuesta textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

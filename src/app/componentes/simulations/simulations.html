@@ -1,4 +1,3 @@
-
 <app-header></app-header>
 <div class="container">
   <div class="titulo">
@@ -7,27 +6,25 @@
   </div>
 
   <!-- Modal -->
-  <div id="simulationModal" class="modal" *ngIf="mostrarModal">
-    <div class="modal-content">
-      <span class="close" (click)="cerrarModal()">&times;</span>
-      <h2>Opciones de Simulación</h2>
-      <button (click)="iniciarNuevoIntento()">Iniciar nuevo intento</button>
-      <button (click)="verUltimoIntento()">Ver último intento</button>
+  <div *ngIf="mostrarModal" class="modal-backdrop" (click)="cerrarModal()">
+    <div id="simulationModal" class="modal" (click)="$event.stopPropagation()">
+      <div class="modal-content">
+        <span class="close" (click)="cerrarModal()">&times;</span>
+        <h2>Opciones de Simulación</h2>
+        <button (click)="iniciarNuevoIntento()">Iniciar nuevo intento</button>
+        <button (click)="verUltimoIntento()">Ver último intento</button>
+      </div>
     </div>
   </div>
 
   <section class="simulacion" *ngFor="let simulacion of simulaciones">
-
-      <h5>{{simulacion.name}}<br></h5>
+    <h5>{{simulacion.name}}<br></h5>
     <p>{{simulacion.description}}</p>
     <div class="rating">
       <img src="assets/img/estrella.svg">
       {{simulacion.rating}} <br>
     </div>
-
     <button (click)="abrirModal(simulacion.id)">Ir a la simulacion</button>
-
   </section>
 </div>
-  <app-footer></app-footer>
-
+<app-footer></app-footer>

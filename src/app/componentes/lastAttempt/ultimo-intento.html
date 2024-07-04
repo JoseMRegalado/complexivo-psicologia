@@ -4,12 +4,19 @@
     <h2>Último Intento</h2>
   </div>
 
-  <section class="pregunta" *ngFor="let pregunta of preguntas">
-    <h5>{{pregunta.title}}<br></h5>
-    <p>{{pregunta.description}}</p>
-    <div class="respuesta">
-      <textarea rows="4" cols="50" readonly>{{obtenerRespuesta(pregunta.id)}}</textarea>
+  <section class="seccion" *ngFor="let pregunta of preguntas">
+    <div class="preguntas">
+      <div class="titulo-pregunta">
+        <h5>{{pregunta.title}}<br></h5>
+      </div>
+      <div class="contenido-pregunta">
+        <p>{{pregunta.description}}</p>
+        <div class="respuesta">
+          <textarea rows="4" cols="50" readonly>{{obtenerRespuesta(pregunta.id)}}</textarea>
+        </div>
+      </div>
     </div>
+
   </section>
 </div>
 <app-footer></app-footer>
