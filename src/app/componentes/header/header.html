@@ -22,7 +22,7 @@
 
   <div class="auth-buttons" >
     <span>{{emailFirstPart}}</span>
-    <a class="boton"><button *ngIf="!loggedIn" [routerLink]="['/login']">Iniciar Sesión</button></a>
+    <a class="boton"><button *ngIf="!loggedIn" [routerLink]="['/login']"><span>Iniciar Sesión</span></button></a>
     <div *ngIf="loggedIn" class="user-info">
       <a class="boton">
         <button  (click)="logout()">

@@ -5,6 +5,7 @@ import { LoginService } from '../../services/login.service'; // Adjust the path 
 @Component({
   selector: 'app-login',
   templateUrl: './login.html',
+  styleUrls: ['./login.css']
 })
 export class LoginComponent {
   email: string = '';
