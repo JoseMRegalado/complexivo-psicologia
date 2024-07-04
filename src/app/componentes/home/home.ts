@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
     slidesPerView: 3,
     spaceBetween: 10,
     navigation: true,
-    pagination: { clickable: true },
     loop: true,
     autoplay: {
       delay: 3000,
