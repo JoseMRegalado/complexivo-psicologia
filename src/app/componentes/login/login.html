@@ -1,13 +1,12 @@
-
 <div class="login-container">
   <div class="tit">
-    <h2>SIMULADOR EXAMEN COMPLEXIVO DE PSICOLOGIA</h2>
+    <img [routerLink]="['/home']" src="./assets/img/Logo-N.svg" alt="Logo">
   </div>
-
   <hr>
   <p>UTPL | Decide ser más</p>
+
   <div class="body">
-    <form (ngSubmit)="login()">
+    <form class="login" (ngSubmit)="login()">
       <div class="input-container">
         <label for="email">Email:</label>
         <input id="email" type="email" [(ngModel)]="email" placeholder="Ingresa tu correo" name="email" required>
