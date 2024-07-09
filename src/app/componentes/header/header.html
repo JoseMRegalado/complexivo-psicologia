@@ -18,9 +18,10 @@
     <a href="https://www.utpl.edu.ec/carreras/psicologia" target="_blank">Psicologia</a>
   </nav>
 
-
-
   <div class="auth-buttons" >
+    <div *ngIf="loggedIn">
+      <img src="./assets/img/user.svg" alt="logo-usuario">
+    </div>
     <span>{{emailFirstPart}}</span>
     <a class="boton"><button *ngIf="!loggedIn" [routerLink]="['/login']"><span>Iniciar Sesión</span></button></a>
     <div *ngIf="loggedIn" class="user-info">

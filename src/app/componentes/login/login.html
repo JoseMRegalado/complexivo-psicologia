@@ -1,24 +1,29 @@
-<div class="login-container">
-  <div class="tit">
-    <img [routerLink]="['/home']" src="./assets/img/Logo-N.svg" alt="Logo">
-  </div>
-  <hr>
-  <p>UTPL | Decide ser más</p>
-
-  <div class="body">
-    <form class="login" (ngSubmit)="login()">
-      <div class="input-container">
-        <label for="email">Email:</label>
-        <input id="email" type="email" [(ngModel)]="email" placeholder="Ingresa tu correo" name="email" required>
-      </div>
-      <div class="input-container">
-        <label for="password">Contraseña:</label>
-        <input id="password" type="password" [(ngModel)]="password" placeholder="Ingresa tu contraseña" name="password" required>
-      </div>
-      <div class="btnLog">
+<div class="login-wrapper">
+  <div class="login-container">
+    <div class="body">
+      <h2>Inicia sesión</h2>
+      <form class="login" (ngSubmit)="login()">
+        <div class="input-container">
+          <label for="email">Correo electrónico</label>
+          <input id="email" type="email" [(ngModel)]="email" placeholder="Correo electrónico" name="email" required>
+        </div>
+        <div class="input-container">
+          <label for="password">Contraseña</label>
+          <input id="password" type="password" [(ngModel)]="password" placeholder="Contraseña" name="password" required>
+        </div>
+        <div class="options">
+          <label>
+            <input type="checkbox" name="remember"> Recuérdame
+          </label>
+          <a href="#">¿Olvidó su contraseña?</a>
+        </div>
         <button type="submit" class="login-button">Iniciar Sesión</button>
-      </div>
-    </form>
-    <img src="../../../assets/img/aas.jpeg" alt="Login" class="login-image">
+      </form>
+      <div class="divider">Accede con</div>
+      <button class="google-login">
+        <img src="./assets/img/google.png" alt="Google logo"> Google
+      </button>
+      <p>¿Eres nuevo? <a href="#">Crea una cuenta</a></p>
+    </div>
   </div>
 </div>
