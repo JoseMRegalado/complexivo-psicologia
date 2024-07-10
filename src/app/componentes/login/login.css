@@ -1,11 +1,4 @@
 
-body{
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0f2f5;
-}
 
 .login-wrapper {
   display: flex;
@@ -22,27 +15,27 @@ body{
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 320px;
-  height: 400px;
+  width: 340px;
+  height: 420px;
   border-radius: 15px;
-  transform: translate(-50%, -50%);
   z-index: -1;
 }
 
 .login-container::before {
-  background: linear-gradient(to bottom, #06beb6, #48b1bf);
-  transform: translate(-50%, calc(-50% - 20px));
+  background: linear-gradient(to bottom, #c3c4c6, #c3c4c6);
+  transform: translate(-49.5%, calc(-50%)) rotate(-10deg);
 }
 
 .login-container::after {
-  background: linear-gradient(to bottom, #ff7e5f, #feb47b);
-  transform: translate(-50%, calc(-50% + 20px));
+  background: linear-gradient(to bottom, #044170, #004271);
+  transform: translate(-49.5%, calc(-50%)) rotate(10deg);
 }
 
 .body {
   background: #fff;
   border-radius: 15px;
   padding: 20px;
+  width: 340px;
 }
 
 h2 {
@@ -87,14 +80,14 @@ h2 {
 }
 
 .options a {
-  color: #007bff;
-  text-decoration: none;
+  color: #044170;
+  text-decoration: underline;
 }
 
 .login-button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color:#044170;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -131,6 +124,6 @@ h2 {
 }
 
 .login-container p a {
-  color: #007bff;
-  text-decoration: none;
+  color: #044170;
+  text-decoration: underline;
 }

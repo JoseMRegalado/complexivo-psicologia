@@ -300,9 +300,8 @@
   align-items: center;
 }
 .imagen-simulacion{
-  padding-bottom: 15px;
   width: 256.15px;
-  height: 199.08px;
+  height: 260px;
 }
 .img-simulacion img{
   width: 100%;
@@ -329,7 +328,7 @@
   padding: 20px;
   border-radius: 10px;
   width: 220px;
-  height: 123px;
+  height: 100px;
   background-color: rgb(245, 247, 250);
   position: absolute;
   margin-top: 140px;
