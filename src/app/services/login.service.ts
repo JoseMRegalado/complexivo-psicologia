@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Observable, BehaviorSubject } from 'rxjs';
 import User from '../interfaces/user.interface';
+import firebase from 'firebase/compat/app';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,30 @@ export class LoginService {
   login(email: string, password: string): Observable<any> {
     return new Observable((observer) => {
       this.afAuth.signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          if (user) {
+            this.loggedIn.next(true);
+            this.currentUser.next({
+              id: user.uid,
+              firstName: user.displayName ? user.displayName.split(' ')[0] : '',
+              lastName: user.displayName ? user.displayName.split(' ').slice(1).join(' ') : '',
+              email: user.email || ''
+            });
+            this.currentUserId.next(user.uid);
+          }
+          observer.next();
+          observer.complete();
+        })
+        .catch(error => {
+          observer.error(error);
+        });
+    });
+  }
+
+  loginWithGoogle(): Observable<any> {
+    return new Observable((observer) => {
+      this.afAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
         .then((userCredential) => {
           const user = userCredential.user;
           if (user) {

@@ -23,4 +23,15 @@ export class LoginComponent {
       }
     );
   }
+
+  loginWithGoogle(): void {
+    this.loginService.loginWithGoogle().subscribe(
+      () => {
+        this.router.navigate(['/simulations']); // Redirect to simulations after login
+      },
+      error => {
+        console.error('Google login failed', error);
+      }
+    );
+  }
 }
