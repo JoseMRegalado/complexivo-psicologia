@@ -91,6 +91,7 @@ export class Step3Component implements OnInit {
 
   finalizarSimulacion(): void {
     // Aquí puedes añadir la lógica para finalizar la simulación
+    confirm('¿Desea finalizar la simulación?');
     console.log('Simulación finalizada');
     this.miRespuesta = ''; // Limpiar la respuesta al avanzar a la siguiente pregunta
     this.mostrarChatGptRespuesta = false; // Ocultar la sección de Chat GPT
