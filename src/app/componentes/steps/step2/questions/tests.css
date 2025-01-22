@@ -16,7 +16,9 @@
 
 .informacion-pregunta p{
   width: 438px;
-  font-size: 11px;
+  font-size: 13px;
+  text-align: center;
+  line-height: 18px;
 }
 
 .questions-section{
@@ -46,7 +48,7 @@
   margin-bottom: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   height: 38px;
-  font-size: 17px;
+  font-size: 15px;
   width: 552px;
 }
 
@@ -57,7 +59,7 @@
   margin-bottom: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   height: 38px;
-  font-size: 17px;
+  font-size: 15px;
   width: 552px;
   cursor: pointer;
 }

@@ -6,8 +6,15 @@
 }
 
 .texto{
+  display: flex;
+  flex-direction: column;
   width: 800px;
-  height: 226px;
+  height: 210px;
+  gap: 15px;
+}
+
+.texto p{
+  line-height: 25px;
 }
 
 .preguntas{
@@ -15,7 +22,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgb(217, 217, 217);
   width: 800px;
-  height: 260px;
+  height: 275px;
   background-color: rgb(217, 217, 217);
 }
 
@@ -80,7 +87,7 @@
 }
 
 .acciones {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .acciones button {

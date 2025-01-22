@@ -100,7 +100,8 @@ export class Step3Component implements OnInit {
 
   enviarRespuesta(): void {
     // Simulación de la llamada a ChatGPT y almacenamiento del análisis
-    this.analisisChatGpt = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.';
+    this.analisisChatGpt = 'Tu respuesta para el caso clínico de transtorno del estado de ánimo, es adecuada para la ' +
+      'pregunta planteada.';
   }
 
   limpiar(): void {
